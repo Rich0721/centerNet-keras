@@ -32,7 +32,7 @@ pip install -r requirments.txt
 
 ## Train
 If you want to download compute_overlap.pyx on other python version you can go to [keras-retinanet](https://github.com/fizyr/keras-retinanet).
-If you want to training self datasets, you can modify config.py CLASSES, IMAGE_DIR, ANNOTATION_DIR, TRAIN_TEXT, VAL_TEXT and TEST_TEXT.
+If you want to training self datasets, you can modify **config.py** *CLASSES, IMAGE_DIR, ANNOTATION_DIR, TRAIN_TEXT, VAL_TEXT and TEST_TEXT*.
 ```
 python train.py
 ```
