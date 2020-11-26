@@ -1,9 +1,9 @@
 from keras.applications.resnet50 import ResNet50
-from keras.layers import Input, Conv2DTranspose, BatchNormalization, Conv2D, Lambda, MaxPooling2D, ZeroPadding2D
-from keras.activations import relu
-from keras.models import Model
-from keras.regularizers import l2
-import keras.backend as K
+from tensorflow.keras.layers import Input, Conv2DTranspose, BatchNormalization, Conv2D, Lambda, MaxPooling2D, ZeroPadding2D
+from tensorflow.keras.activations import relu
+from tensorflow.keras.models import Model
+from tensorflow.keras.regularizers import l2
+import tensorflow.keras.backend as K
 
 from losses import loss
 from models.common import decode

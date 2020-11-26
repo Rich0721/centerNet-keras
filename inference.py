@@ -1,9 +1,7 @@
 from generators.pascal import PascalVocGenerator
 from models.centernet import centernet
 import cv2
-import os
 import numpy as np
-import time
 from generators.utils import affine_transform, get_affine_transform
 import os.path as osp
 from config import Config
@@ -11,13 +9,13 @@ from config import Config
 
 ############################################################
 cfg = Config()
-model_path = "./centernet/centernerNet-08.h5"
+model_path = "./centernet/centernerNet_imgaug-83.h5"
 ############################################################
 
 
 def main():
 
-    generator = PascalVocGenerator(cfg.IMAGE_DIR, cfg.ANNOTATION_DIR, cfg.TEST_TEXT, classes=cfg.CLASSES, skip_difficult=True)
+    generator = PascalVocGenerator(cfg.IMAGE_DIR, cfg.ANNOTATION_DIR, cfg.TEST_TEXT, classes=cfg.CLASSES, skip_difficult=True, train_data=False)
     
     num_classes = generator.num_classes()
     classes = list(generator.classes.keys())
@@ -27,6 +25,7 @@ def main():
 
     for i in range(10):
         image = generator.load_image(i)
+        #cv2.imwrite("./results/{}_o.jpg".format(i), image)
         src_image = image.copy()
 
         c = np.array([image.shape[1] / 2., image.shape[0] / 2.], dtype=np.float32)
@@ -42,7 +41,7 @@ def main():
         else:
             inputs = np.expand_dims(image, axis=0)
 
-        detections = predict_model.predict_on_batch(inputs)[0]
+        detections = model.predict_on_batch(inputs)[0]
 
         scores = detections[:, 4]
 
@@ -71,11 +70,14 @@ def main():
             class_name = classes[class_id]
             label = '-'.join([class_name, score])
             ret, baseline = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.5, 1)
+            
             cv2.rectangle(src_image, (xmin, ymin), (xmax, ymax), color, 1)
             cv2.rectangle(src_image, (xmin, ymax - ret[1] - baseline), (xmin + ret[0], ymax), color, -1)
             cv2.putText(src_image, label, (xmin, ymax - baseline), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1)
-
+        #cv2.imwrite("./results/{}_r.jpg".format(i), src_image)
         cv2.imshow('image', src_image)
         cv2.waitKey(0)
 
-main()
+
+if __name__ == "__main__":
+    main()
