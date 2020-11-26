@@ -13,17 +13,17 @@ This is an implementation of [CenterNet](https://arxiv.org/abs/1904.07850) for o
 ## Inference
 
 ### input image
-<br>
+
 ![images/0.jpg](images/0.jpg)
 ![images/2.jpg](images/1.jpg)
 ![images/1.jpg](images/2.jpg)
-</br>
+
 ### Inference results
-<br>
+
 ![results/0.jpg](results/0.jpg)
 ![results/2.jpg](results/1.jpg)
 ![results/1.jpg](results/2.jpg)
-</br>
+
 
 ## Install library
 ```
