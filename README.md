@@ -27,7 +27,7 @@ This is an implementation of [CenterNet](https://arxiv.org/abs/1904.07850) for o
 
 ## Install library
 ```
-pip install requirments.txt
+pip install -r requirments.txt
 ```
 
 ## Train
