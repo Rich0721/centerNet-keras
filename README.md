@@ -10,6 +10,14 @@ This is an implementation of [CenterNet](https://arxiv.org/abs/1904.07850) for o
 - [ ] More backbone.
 - [ ] So on.
 
+## Inference
+
+### input image
+<br>
+  <img src="./images/0.jpg'>
+</br>
+## Inference results
+
 
 ## Install library
 ```
