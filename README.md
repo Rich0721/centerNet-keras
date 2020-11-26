@@ -10,15 +10,29 @@ This is an implementation of [CenterNet](https://arxiv.org/abs/1904.07850) for o
 - [ ] More backbone.
 - [ ] So on.
 
+## Inference
+
+### input image
+
+![images/0.jpg](images/0.jpg)
+![images/2.jpg](images/1.jpg)
+![images/1.jpg](images/2.jpg)
+
+### Inference results
+
+![results/0.jpg](results/0.jpg)
+![results/2.jpg](results/1.jpg)
+![results/1.jpg](results/2.jpg)
+
 
 ## Install library
 ```
-pip install requirments.txt
+pip install -r requirments.txt
 ```
 
 ## Train
 If you want to download compute_overlap.pyx on other python version you can go to [keras-retinanet](https://github.com/fizyr/keras-retinanet).
-If you want to training self datasets, you can modify config.py CLASSES, IMAGE_DIR, ANNOTATION_DIR, TRAIN_TEXT, VAL_TEXT and TEST_TEXT.
+If you want to training self datasets, you can modify **config.py** *CLASSES, IMAGE_DIR, ANNOTATION_DIR, TRAIN_TEXT, VAL_TEXT and TEST_TEXT*.
 ```
 python train.py
 ```
