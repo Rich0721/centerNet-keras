@@ -13,9 +13,7 @@ This is an implementation of [CenterNet](https://arxiv.org/abs/1904.07850) for o
 ## Inference
 
 ### input image
-<br>
-  <img src="./images/0.jpg'>
-</br>
+![images/0.jpg](images/0.jpg)
 ## Inference results
 
 
